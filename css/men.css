@@ -1,0 +1,228 @@
+/* Men's Page Specific Styles */
+:root {
+    --mens-primary: #2C3E50;
+    --mens-accent: #34495E;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Men's Hero Section Modifications */
+  .hero {
+    height: 80vh;
+  }
+  
+  .hero::before {
+    background: linear-gradient(to right, rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.3));
+  }
+  
+  /* New Arrivals Section */
+  .new-arrivals {
+    padding: 4rem 0;
+    background: var(--gray-100);
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-image {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .product-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .product-card:hover .product-overlay {
+    opacity: 1;
+  }
+  
+  .quick-view-btn {
+    background: white;
+    color: var(--mens-primary);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover .quick-view-btn {
+    transform: translateY(0);
+  }
+  
+  .product-info {
+    padding: 1rem;
+  }
+  
+  .product-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .price {
+    color: var(--mens-primary);
+    font-weight: 600;
+  }
+  
+  /* Categories Section */
+  .categories {
+    padding: 6rem 0;
+  }
+  
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 1/1;
+  }
+  
+  .category-image {
+    height: 100%;
+  }
+  
+  .category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .category-card:hover img {
+    transform: scale(1.1);
+  }
+  
+  .category-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    text-align: center;
+  }
+  
+  .category-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .category-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .category-link:hover {
+    background: white;
+    color: var(--mens-primary);
+  }
+  
+  /* Technology Showcase */
+  .technology-showcase {
+    padding: 6rem 0;
+    background: var(--gray-100);
+  }
+  
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .tech-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tech-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-100);
+    border-radius: 50%;
+    color: var(--mens-primary);
+  }
+  
+  .tech-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--mens-primary);
+  }
+  
+  .tech-card p {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .category-grid,
+    .tech-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .product-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  }
